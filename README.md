@@ -12,6 +12,10 @@ For a tale of the legend himself, come and [listen to your commanding officer](h
 
 ## FAQ
 
+<p align="center">
+  <img src="Textures/UI/Storytellers/SiegfriedSiegeArtPiece.png" height="500" />
+</p>
+
 * **Can I use the code in here?**
 
 Yes. Preferably with crediting all the people who contributed to this storyteller.
