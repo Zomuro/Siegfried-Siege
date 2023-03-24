@@ -11,4 +11,13 @@
 		</value>
     </Operation>	
 	
+	<Operation Class="PatchOperationAdd"> 
+		<xpath>/Defs/StatDef[defName="MentalBreakThreshold"]</xpath>
+		<value>
+			<parts>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
+			</parts>
+		</value>
+    </Operation>	
+	
 </Patch>

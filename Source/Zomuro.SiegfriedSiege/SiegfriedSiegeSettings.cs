@@ -22,6 +22,10 @@ namespace Zomuro.SiegfriedSiege
 
         public int TicksPassed = 0; // used to save time with the combat boost
 
+        public bool SiegfriedSiegeCombatMentalEnable = false; // Optional mechanic: decrease mental threshold in combat
+
+        public float SiegfriedSiegeCombatMentalMult = 0.8f; // threshold multiplied by 75% in combat
+
         public override void ExposeData()
         {
             Scribe_Values.Look(ref SiegfriedSiegeBuildingMult, "SiegfriedSiegeBuildingMult", 2f);
@@ -31,6 +35,9 @@ namespace Zomuro.SiegfriedSiege
             Scribe_Values.Look(ref SiegfriedSiegeCombatConstructEnable, "SiegfriedSiegeCombatConstructEnable", false);
             Scribe_Values.Look(ref SiegfriedSiegeCombatConstructMultTime, "SiegfriedSiegeCombatConstructMultTime", 120f);
             Scribe_Values.Look(ref SiegfriedSiegeCombatConstructMultMax, "SiegfriedSiegeCombatConstructMultMax", 1.3f);
+
+            Scribe_Values.Look(ref SiegfriedSiegeCombatMentalEnable, "SiegfriedSiegeCombatConstructEnable", false);
+            Scribe_Values.Look(ref SiegfriedSiegeCombatMentalMult, "SiegfriedSiegeCombatConstructMultTime", 0.8f);
 
             Scribe_Values.Look(ref TicksPassed, "TicksPassed", 0);
             base.ExposeData();
@@ -99,6 +106,15 @@ namespace Zomuro.SiegfriedSiege
                 settings.SiegfriedSiegeCombatConstructMultMax = listing.Slider(ForceRoundTenths(settings.SiegfriedSiegeCombatConstructMultMax), 0.5f, 3f);
             }
 
+            listing.CheckboxLabeled("SiegfriedSiege_CombatMentalEnable".Translate(settings.SiegfriedSiegeCombatMentalEnable.ToString()),
+                ref settings.SiegfriedSiegeCombatMentalEnable, "SiegfriedSiege_CombatMentalEnableTooltip".Translate());
+            if (settings.SiegfriedSiegeCombatMentalEnable)
+            {
+                listing.Label("SiegfriedSiege_CombatMentalMult".Translate(settings.SiegfriedSiegeCombatMentalMult.ToString("F1")), -1,
+                "SiegfriedSiege_CombatMentalMultTooltip".Translate());
+                settings.SiegfriedSiegeCombatMentalMult = listing.Slider(ForceRoundTenths(settings.SiegfriedSiegeCombatMentalMult), 0.1f, 2f);
+            }
+
             listing.Gap(16f);
             if (listing.ButtonText("Reset to default"))
             {
@@ -120,6 +136,9 @@ namespace Zomuro.SiegfriedSiege
             settings.SiegfriedSiegeCombatConstructEnable = false; 
             settings.SiegfriedSiegeCombatConstructMultTime = 120f; 
             settings.SiegfriedSiegeCombatConstructMultMax = 1.3f;
-    }
+
+            settings.SiegfriedSiegeCombatMentalEnable = false;
+            settings.SiegfriedSiegeCombatMentalMult = 0.8f;
+        }
     }
 }

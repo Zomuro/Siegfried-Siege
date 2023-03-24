@@ -12,11 +12,14 @@
 	
 	<SiegfriedSiege_CombatConstructEnable>Enable combat construct boost: {0}</SiegfriedSiege_CombatConstructEnable>
 	<SiegfriedSiege_CombatConstructEnableTooltip>Toggle an additional multiplier to construction speed that only applies and grows over time in the middle of combat, from 1x to the max value.</SiegfriedSiege_CombatConstructEnableTooltip>
-	
 	<SiegfriedSiege_CombatConstructTime>Time to max multiplier: {0} secs</SiegfriedSiege_CombatConstructTime>
 	<SiegfriedSiege_CombatConstructTimeTooltip>Set how long a pawn must be in combat to receive the full combat construction speed multiplier.</SiegfriedSiege_CombatConstructTimeTooltip>
-	
 	<SiegfriedSiege_CombatConstructSetting>Max boost in combat: {0}x</SiegfriedSiege_CombatConstructSetting>
-	<SiegfriedSiege_CombatConstructSettingTooltip>Set the maximum combat construction speed multiplier after spending enough time in combat.</SiegfriedSiege_CombatConstructSettingTooltip>
+	<SiegfriedSiege_CombatConstructSettingTooltip>Set the maximum combat construction speed multiplier a pawn gets after spending enough time in combat.</SiegfriedSiege_CombatConstructSettingTooltip>
+	
+	<SiegfriedSiege_CombatMentalEnable>Mental thresh decrease in combat: {0}</SiegfriedSiege_CombatMentalEnable>
+	<SiegfriedSiege_CombatMentalEnableTooltip>Toggle whether combat decreases pawn mental break threshold by a percentage.</SiegfriedSiege_CombatMentalEnableTooltip>
+	<SiegfriedSiege_CombatMentalMult>Combat mental thresh mult: {0}x</SiegfriedSiege_CombatMentalMult>
+	<SiegfriedSiege_CombatMentalMultTooltip>Set the mental threshold factor a pawn gets while in combat. Decreasing this makes it harder for pawns to suffer mental breaks.</SiegfriedSiege_CombatMentalMultTooltip>
 
 </LanguageData>

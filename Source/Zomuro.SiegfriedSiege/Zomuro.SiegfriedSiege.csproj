@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="StatPart_CombatConstructSpeedSetting.cs" />
+    <Compile Include="StatPart_MentalThresholdSetting.cs" />
     <Compile Include="StorytellerUtility.cs" />
     <Compile Include="StatPart_ConstructSpeedSetting.cs" />
     <Compile Include="StorytellerDefOf.cs" />
