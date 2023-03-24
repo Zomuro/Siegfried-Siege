@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Siegfried Siege</name>
+	<author>Zomuro</author>
+	<supportedVersions><li>1.4</li></supportedVersions>
+	<packageId>Zomuro.SiegfriedSiege</packageId>
+	<description>Many fortresses have fallen to Siegfried, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster. But beware! In the thick of combat, their need for food is doubled.\n\nOtherwise, his tales will reflect the unpredictability of war.\n
+My warmest thanks go to:
+DetVisor, for the concept of the big man himself;
+Visandar_the_Unliving, for his incredible portrait of Siegfried;
+And many others within the RimWorld community for your support!
+	</description>
+	
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+
+	</modDependencies>
+
+	
+</ModMetaData>

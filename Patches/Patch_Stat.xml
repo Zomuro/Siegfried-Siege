@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd"> 
+		<xpath>/Defs/StatDef[defName="ConstructionSpeed"]</xpath>
+		<value>
+			<parts>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_ConstructSpeedSetting"/>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_CombatConstructSpeedSetting"/>
+			</parts>
+		</value>
+    </Operation>	
+	
+</Patch>

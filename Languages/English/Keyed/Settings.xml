@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+	<SiegfriedSiege_Settings>Siegfried Siege</SiegfriedSiege_Settings>
+	<SiegfriedSiege_Label>Siegfried Siege</SiegfriedSiege_Label>
+	<SiegfriedSiege_BuildingDmgSetting>Building damage factor: {0}x</SiegfriedSiege_BuildingDmgSetting>
+	<SiegfriedSiege_BuildingDmgSettingTooltip>Sets how much Siegfried Siege multiples damage to buildings by, independent of any existing factors.</SiegfriedSiege_BuildingDmgSettingTooltip>
+	<SiegfriedSiege_ConstructSetting>Construction speed factor: {0}x</SiegfriedSiege_ConstructSetting>
+	<SiegfriedSiege_ConstructSettingTooltip>Sets how much Siegfried Siege multiplies construction speed.</SiegfriedSiege_ConstructSettingTooltip>
+	<SiegfriedSiege_HungerFactor>Combat hunger factor: {0}x</SiegfriedSiege_HungerFactor>
+	<SiegfriedSiege_HungerFactorTooltip>Sets how much hunger rate is multiplied by while combat is occuring.</SiegfriedSiege_HungerFactorTooltip>
+	
+	<SiegfriedSiege_CombatConstructEnable>Enable combat construct boost: {0}</SiegfriedSiege_CombatConstructEnable>
+	<SiegfriedSiege_CombatConstructEnableTooltip>Toggle an additional multiplier to construction speed that only applies and grows over time in the middle of combat, from 1x to the max value.</SiegfriedSiege_CombatConstructEnableTooltip>
+	
+	<SiegfriedSiege_CombatConstructTime>Time to max multiplier: {0} secs</SiegfriedSiege_CombatConstructTime>
+	<SiegfriedSiege_CombatConstructTimeTooltip>Set how long a pawn must be in combat to receive the full combat construction speed multiplier.</SiegfriedSiege_CombatConstructTimeTooltip>
+	
+	<SiegfriedSiege_CombatConstructSetting>Max boost in combat: {0}x</SiegfriedSiege_CombatConstructSetting>
+	<SiegfriedSiege_CombatConstructSettingTooltip>Set the maximum combat construction speed multiplier after spending enough time in combat.</SiegfriedSiege_CombatConstructSettingTooltip>
+
+</LanguageData>
