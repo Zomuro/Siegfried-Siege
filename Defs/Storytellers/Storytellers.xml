@@ -3,7 +3,7 @@
 	<StorytellerDef ParentName="BaseStoryteller"> <!-- Siegfried Siege -->
 		<defName>Zomuro_SiegfriedSiege</defName>
 		<label>Siegfried Siege</label>
-		<description>Many fortresses have fallen to Siegfried, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster. But beware! In the thick of combat, their need for food is doubled.\n\nOtherwise, his tales will reflect the unpredictability of war.</description>
+		<description>Many fortresses have fallen to Siegfried, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster by default. And in the thick of combat, their need for food is only 80% of normal.\n\nOtherwise, his tales will reflect the unpredictability of war.</description>
 		<portraitLarge>UI/HeroArt/Storytellers/RandyRandom</portraitLarge>
 		<portraitTiny>UI/HeroArt/Storytellers/RandyRandomTiny</portraitTiny>
 		<listOrder>40</listOrder>

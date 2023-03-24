@@ -4,12 +4,14 @@
 	<author>Zomuro</author>
 	<supportedVersions><li>1.4</li></supportedVersions>
 	<packageId>Zomuro.SiegfriedSiege</packageId>
-	<description>Many fortresses have fallen to Siegfried, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster. But beware! In the thick of combat, their need for food is doubled.\n\nOtherwise, his tales will reflect the unpredictability of war.\n
+	<description>Many fortresses have fallen to Siegfried, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster by default. And in the thick of combat, their need for food is only 80% of normal.
+
+Otherwise, his tales will reflect the unpredictability of war.
+
 My warmest thanks go to:
 DetVisor, for the concept of the big man himself;
 Visandar_the_Unliving, for his incredible portrait of Siegfried;
-And many others within the RimWorld community for your support!
-	</description>
+And many others within the RimWorld community for your support!</description>
 	
 	<modDependencies>
 		<li>
