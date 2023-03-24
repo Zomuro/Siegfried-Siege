@@ -1,9 +1,7 @@
 # Siegfried Siege
 
 ### Summary
-Many fortresses have fallen to **Siegfried**, whose experiences have taught him how to efficiently shatter and build fortifications. 
-Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster. But beware! 
-In the thick of combat, their need for food is doubled.
+Many fortresses have fallen to **Siegfried**, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster by default. And in the thick of combat, their need for food is only 80% of normal.
 
 Otherwise, his tales will reflect the unpredictability of war.
 
@@ -31,7 +29,7 @@ The summary will continue to reflect the default values, however.
 
 ## Credits
 
-My warmest thanks go to:
+Warmest thanks go to:
 * **DetVisor**, for the concept of the big man himself and the enchanted steel he wears. This mod was made for him.
 * **Visandar_the_Unliving**, for his incredible art of Siegfried.
 
