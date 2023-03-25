@@ -60,13 +60,25 @@ namespace Zomuro.SiegfriedSiege
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
+            // sets up left section (listing of settings)
             Rect leftThird = new Rect(inRect);
             leftThird.width = inRect.width / 3;
 
+            // sets up right side (image of Siegfried)
             Rect otherTwoThird = new Rect(inRect);
             otherTwoThird.xMin += inRect.width / 3;
-            Widgets.DrawTextureFitted(otherTwoThird, RimWorld.StorytellerDefOf.Cassandra.portraitLargeTex, 0.9f);
 
+            // picture frame
+            Rect otherTwoThirdBorder = otherTwoThird.ContractedBy(20f);
+            otherTwoThirdBorder.y -= 20f;
+            Widgets.DrawBoxSolidWithOutline(otherTwoThirdBorder, Color.clear, Color.grey);
+            Widgets.DrawBoxSolidWithOutline(otherTwoThirdBorder.ContractedBy(5f), Color.clear, Color.grey);
+
+            // image of Siegfried Siege
+            Rect otherTwoThirdImage = otherTwoThirdBorder.ContractedBy(10f);
+            Widgets.DrawTextureFitted(otherTwoThirdImage, StorytellerDefOf.Zomuro_SiegfriedSiege.portraitLargeTex, 1f);
+
+            // listing of settings on left side
             var listing = new Listing_Standard();
             listing.Begin(leftThird);
             listing.Gap(16f);
@@ -79,8 +91,6 @@ namespace Zomuro.SiegfriedSiege
         public void SiegfriedSiegeSettings(ref Listing_Standard listing)
         {
             Text.Font = GameFont.Small;
-            //
-
             listing.Label("SiegfriedSiege_BuildingDmgSetting".Translate(settings.SiegfriedSiegeBuildingMult.ToString("F1")), -1,
                 "SiegfriedSiege_BuildingDmgSettingTooltip".Translate());
             settings.SiegfriedSiegeBuildingMult = listing.Slider(ForceRoundTenths(settings.SiegfriedSiegeBuildingMult), 0.5f, 3f);
