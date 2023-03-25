@@ -1,5 +1,9 @@
 # Siegfried Siege
 
+<p align="center">
+  <img src="Textures/UI/Storytellers/SiegfriedSiege.png" height="512" />
+</p>
+
 ### Summary
 Many fortresses have fallen to **Siegfried**, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster by default. And in the thick of combat, their need for food is only 80% of normal.
 
@@ -27,14 +31,16 @@ You'll want to ask first. If we give you our blessings, you're clear.
 * **I don't like how fast pawns build stuff, or starve, or break buildings.**
 
 You can change all those values in this mod's settings. Don't like your pawn getting the munchies during a firefight? Lower the hunger rate multiplier. 
-Do the same for all the other stuff.
+Do the same for all the other stuff. There might even be some optional mechanics you can play with as well.
 
 The summary will continue to reflect the default values, however.
 
 ## Credits
 
+![](Textures/UI/Storytellers/SiegfriedSiegeTiny.png)
+
 Warmest thanks go to:
 * **DetVisor**, for the concept of the big man himself and the enchanted steel he wears. This mod was made for him.
-* **Visandar_the_Unliving**, for his incredible art of Siegfried.
+* **Visandar_the_Unliving**, for his incredible art of **Siegfried**.
 
 And many others within the RimWorld community for your support!
