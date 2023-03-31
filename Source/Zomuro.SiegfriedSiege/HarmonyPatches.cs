@@ -25,6 +25,11 @@ namespace Zomuro.SiegfriedSiege
             harmony.Patch(AccessTools.Method(typeof(DamageWorker), "Apply"),
                 null, null, new HarmonyMethod(typeof(HarmonyPatches), nameof(Apply_SiegfriedSiege_Post)));
 
+            // ExposeData_SiegfriedSiege_Post
+            // POSTFIX: saves values for Siegfried's comp
+            harmony.Patch(AccessTools.Method(typeof(Storyteller), "ExposeData"),
+                null, new HarmonyMethod(typeof(HarmonyPatches), nameof(ExposeData_SiegfriedSiege_Post)));
+
         }
 
         // POSTFIX: adjust hunger rate if the pawn is in combat, based on settings
@@ -72,6 +77,16 @@ namespace Zomuro.SiegfriedSiege
                 
             return 1f;
 
+        }
+
+        public static void ExposeData_SiegfriedSiege_Post(Storyteller __instance) // save Siegfried's comp values
+        {
+            if (Find.Storyteller.def != StorytellerDefOf.Zomuro_SiegfriedSiege) return;
+            StorytellerComp_Orders compOrder = StorytellerUtility.OrdersComp;
+            if (compOrder != null)
+            {
+                compOrder.CompExposeData();
+            }
         }
     }
 }

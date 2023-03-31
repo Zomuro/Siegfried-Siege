@@ -16,6 +16,20 @@ namespace Zomuro.SiegfriedSiege
             return false;
         }
 
+        public static StorytellerComp_Orders OrdersComp
+        {
+            get
+            {
+                if(cachedComp is null)
+                {
+                    cachedComp = Find.Storyteller.storytellerComps.FirstOrDefault(x => x.GetType() == typeof(StorytellerComp_Orders)) as StorytellerComp_Orders;
+                }
+                return cachedComp;
+            }
+        }
+
+        private static StorytellerComp_Orders cachedComp;
+
         public static SiegfriedSiegeSettings settings = LoadedModManager.GetMod<SiegfriedSiegeMod>().GetSettings<SiegfriedSiegeSettings>();
     }
 }

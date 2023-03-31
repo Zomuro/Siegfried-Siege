@@ -61,6 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StorytellerOrderWorker.cs" />
+    <Compile Include="StorytellerOrderDef.cs" />
+    <Compile Include="StorytellerCompProperties_Orders.cs" />
+    <Compile Include="StorytellerComp_Orders.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="StatPart_CombatConstructSpeedSetting.cs" />
     <Compile Include="StatPart_MentalThresholdSetting.cs" />
