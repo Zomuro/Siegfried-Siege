@@ -8,18 +8,16 @@ using Verse;
 
 namespace Zomuro.SiegfriedSiege
 {
-    public class StorytellerOrderWorker
+    public class StorytellerOrderWorker_Wisdom_Research : StorytellerOrderWorker
     {
-        public virtual float OrderTransformValue(StatRequest req)
+        public override float OrderTransformValue(StatRequest req)
         {
-            return 0f;
+            return 0.3f;
         }
         
-        public virtual string OrderExplanationPart(StatRequest req)
+        public override string OrderExplanationPart(StatRequest req)
         {
             return "";
         }
-
-        public StorytellerOrderDef def;
     }
 }

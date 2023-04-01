@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StorytellerOrderWorker_Wisdom_Research.cs" />
     <Compile Include="StorytellerOrderWorker.cs" />
     <Compile Include="StorytellerOrderDef.cs" />
     <Compile Include="StorytellerCompProperties_Orders.cs" />
