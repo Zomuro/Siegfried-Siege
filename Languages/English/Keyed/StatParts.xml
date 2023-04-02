@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
   
+	<!-- settings -->
 	<SiegfriedSiege_StatsReport_ConstructSpeed>Construction multiplier (Siegfried Siege)</SiegfriedSiege_StatsReport_ConstructSpeed>
 	<SiegfriedSiege_StatsReport_CombatConstructSpeed>Combat engineering multiplier (Siegfried Siege)</SiegfriedSiege_StatsReport_CombatConstructSpeed>
 	<SiegfriedSiege_StatsReport_CombatMentalThreshold>Combat mental threshold multiplier (Siegfried Siege)</SiegfriedSiege_StatsReport_CombatMentalThreshold>
 
+	<!-- orders -->
+	<SiegfriedSiege_StatsReport_WisdomDay>Siegfried Siege's Order (Wisdom; Daytime):</SiegfriedSiege_StatsReport_WisdomDay>
+	<SiegfriedSiege_StatsReport_WisdomNight>Siegfried Siege's Order (Wisdom; Nighttime):</SiegfriedSiege_StatsReport_WisdomNight>
+	
 </LanguageData>

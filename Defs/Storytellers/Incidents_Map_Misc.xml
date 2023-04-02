@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>Zomuro_SiegfriedSiegeOrder</defName>
+		<label>New Order (Siegfried Siege)</label>
+		<category>Special</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>Zomuro.SiegfriedSiege.IncidentWorker_Order</workerClass>
+		<baseChance>1</baseChance>
+	</IncidentDef>
+
+</Defs>

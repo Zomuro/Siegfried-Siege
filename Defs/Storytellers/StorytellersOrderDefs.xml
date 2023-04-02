@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
+		<defName>Zomuro_Wisdom</defName>
+		<label>New order: wisdom</label>
+		<description>“Even the arcane must be guided by prudence- the same is true of all knowledge.”\n\nWhile this order is active, pawns will receive wisdom depending on the time of day.\n  - Daytime: pawn research speed is multiplied by 130%.\n  - Night: pawn psychic sensitivity is multiplied by 125%.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
+		<defName>Zomuro_Duty</defName>
+		<label>New order: duty</label>
+		<description>“Responsibility walks hand in hand with competence. Do not shirk your duties.”\n\nWhile this order is active, temporarily increase the level of all skills based on their passion.\n  - Interested: +1 level.\n  - Burning: +2 levels.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Courage</defName>
+		<label>New order: courage</label>
+		<description>“The fire of war brings both fear and life. Those that can tame the flame abound in courage.”\n\nWhile this order is active, pawn heat tolerance is multiplied by 120%. Additionally, the healing rate of pawns is multiplied by 200%.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Perseverance</defName>
+		<label>New order: perseverance</label>
+		<description>“A powerful will grinds even mountains down. This is how Rosstein fell.”\n\nWhile this order is active, enemies take more damage depending on their size.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Humility</defName>
+		<label>New order: humility</label>
+		<description>“An army’s value is greater than that of the soldiers serving in it.”\n\nWhile this order is active, mood is granted for each piece of equipment that has a quality rating, depending on the quality.\n  - Awful (-2)\n  - Poor (-1)\n  - Normal (0)\n  - Good (+1)\n  - Excellent (+2)\n  - Masterwork (+3)\n  - Legendary (+4)</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Decisiveness</defName>
+		<label>New order: decisiveness</label>
+		<description>“Do not hesitate in the midst of adversity. Difficult choices separate the dead from the living.”\n\nWhile this order is active, the less health a pawn has, the more melee damage they do.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Discipline</defName>
+		<label>New order: discipline</label>
+		<description>“Panic serves no one but the enemy. That is why you must keep your cool.”\n\nWhile this order is active, pawn cold tolerance is multiplied by 120%. Additionally, their mental break threshold is multiplied by pawn health percentage.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Honor</defName>
+		<label>New order: honor</label>
+		<description>“Honor makes men better than beasts. Discarding it cheapens the blood spilled.”\n\nWhile this order is active, pawns heal from the damage they deal based on their social relationship scores.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Loyalty</defName>
+		<label>New order: loyalty</label>
+		<description>“Promises kept are the mark of great men. Your oath to me will be your shield.”\n\nWhile this order is active, the lower a pawn’s mental break threshold is, the greater damage reduction they gain.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+		<defName>Zomuro_Patience</defName>
+		<label>New order: patience</label>
+		<description>“The greatest men march forward carefully, as alchemists do. In doing so, they overcome their flaws.”\n\nWhile this order is active, drug highs are extended and skill losses are reduced.</description>
+	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
+
+</Defs>

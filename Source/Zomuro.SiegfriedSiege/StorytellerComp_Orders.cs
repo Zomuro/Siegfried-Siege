@@ -18,15 +18,6 @@ namespace Zomuro.SiegfriedSiege
 			}
 		}
 
-		public StorytellerOrderWorker CurrentWorker
-        {
-            get
-            {
-                if (currentOrder is null) currentOrder = SelectOrder();
-                return currentOrder.Worker;
-            }
-        }
-
 		public override void Initialize()
 		{
             // each time we initialize the storyteller
@@ -41,14 +32,35 @@ namespace Zomuro.SiegfriedSiege
             
             // we then add in keys that are in the xml but NOT in enabledOrders
 			foreach(var order in Props.orders) if (!enabledOrders.ContainsKey(order)) enabledOrders.Add(order, true);
+
+            //if (currentOrder is null) NewOrder();
 		}
 
-        public StorytellerOrderDef SelectOrder()
+		public override IEnumerable<FiringIncident> MakeIntervalIncidents(IIncidentTarget target)
+		{
+			if (!StorytellerUtility.SiegfriedSiegeCheck()) yield break;
+			
+			if (currentOrder is null || Rand.MTBEventOccurs(15f, 60000f, 1000f))
+			{
+                IncidentParms parms = GenerateParms(IncidentDefOf_SiegfriedSiege.Zomuro_SiegfriedSiegeOrder.category, target);
+                // put in siegfried's incidentdef here
+                yield return new FiringIncident(IncidentDefOf_SiegfriedSiege.Zomuro_SiegfriedSiegeOrder, this, parms);
+            }
+			yield break;
+		}
+
+		public void NewOrder()
         {
-            if (currentOrder is null) return Props.orders.RandomElement();
+            if (Props.orders.NullOrEmpty()) return;
+            if (currentOrder is null) currentOrder = Props.orders.RandomElement();
             List<StorytellerOrderDef> selectableOrders = Props.orders.ListFullCopy();
-            selectableOrders.Remove(currentOrder);
-            return selectableOrders.RandomElement();
+            if(selectableOrders.Count() > 1) selectableOrders.Remove(currentOrder);
+            currentOrder = selectableOrders.RandomElement();
+        }
+
+        public bool OrderIsEnabled(StorytellerOrderDef order)
+        {
+            return enabledOrders.ContainsKey(order) && enabledOrders[order];
         }
 
 		public void CompExposeData()
@@ -57,10 +69,9 @@ namespace Zomuro.SiegfriedSiege
             Scribe_Collections.Look(ref enabledOrders, "enabledOrders", LookMode.Def, LookMode.Value);
         }
 
-        public Dictionary<StorytellerOrderDef, bool> enabledOrders = new Dictionary<StorytellerOrderDef, bool>();
+        private Dictionary<StorytellerOrderDef, bool> enabledOrders = new Dictionary<StorytellerOrderDef, bool>();
 
-		private StorytellerOrderDef currentOrder;
-
+		public StorytellerOrderDef currentOrder;
 	}
 
     

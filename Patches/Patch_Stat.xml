@@ -1,7 +1,84 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-	<Operation Class="PatchOperationAdd"> 
+	<Operation Class="PatchOperationConditional"> <!-- Construction speed -->
+		<xpath>Defs/StatDef[defName="ConstructionSpeed"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="ConstructionSpeed"]</xpath>
+			<value>
+				<parts>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_ConstructSpeedSetting"/>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_CombatConstructSpeedSetting"/>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="ConstructionSpeed"]/parts</xpath>
+			<value>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_ConstructSpeedSetting"/>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_CombatConstructSpeedSetting"/>
+			</value>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional"> <!-- MentalBreakThreshold -->
+		<xpath>Defs/StatDef[defName="MentalBreakThreshold"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="MentalBreakThreshold"]</xpath>
+			<value>
+				<parts>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="MentalBreakThreshold"]/parts</xpath>
+			<value>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
+			</value>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional"> <!-- ResearchSpeed -->
+		<xpath>Defs/StatDef[defName="ResearchSpeed"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="ResearchSpeed"]</xpath>
+			<value>
+				<parts>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Wisdom_Research">
+						<requiredOrderDef>Zomuro_Wisdom</requiredOrderDef>
+						<key>SiegfriedSiege_StatsReport_WisdomDay</key>
+						<factor>1.3</factor>
+					</li>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="ResearchSpeed"]/parts</xpath>
+			<value>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Wisdom_Research">
+					<requiredOrderDef>Zomuro_Wisdom</requiredOrderDef>
+					<key>SiegfriedSiege_StatsReport_WisdomDay</key>
+					<factor>1.3</factor>
+				</li>
+			</value>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd"> <!-- PsychicSensitivity -->
+		<xpath>Defs/StatDef[defName="PsychicSensitivity"]/parts</xpath>
+		<value>
+			<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Wisdom_Psychic">
+				<requiredOrderDef>Zomuro_Wisdom</requiredOrderDef>
+				<key>SiegfriedSiege_StatsReport_WisdomNight</key>
+				<factor>1.25</factor>
+			</li>
+		</value>
+	</Operation>
+	
+	
+
+	<!--<Operation Class="PatchOperationAdd"> 
 		<xpath>/Defs/StatDef[defName="ConstructionSpeed"]</xpath>
 		<value>
 			<parts>
@@ -18,6 +95,7 @@
 				<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
 			</parts>
 		</value>
-    </Operation>	
+    </Operation>	-->
+	
 	
 </Patch>

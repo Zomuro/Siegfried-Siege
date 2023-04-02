@@ -61,8 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StorytellerOrderWorker_Wisdom_Research.cs" />
-    <Compile Include="StorytellerOrderWorker.cs" />
+    <Compile Include="IncidentWorker_Order.cs" />
+    <Compile Include="StatPart_Order_Wisdom_Psychic.cs" />
+    <Compile Include="StatPart_Order_Wisdom_Research.cs" />
+    <Compile Include="StatPart_Order.cs" />
+    <Compile Include="StorytellerOrderDefOf.cs" />
+    <Compile Include="IncidentDefOf_SiegfriedSiege.cs" />
     <Compile Include="StorytellerOrderDef.cs" />
     <Compile Include="StorytellerCompProperties_Orders.cs" />
     <Compile Include="StorytellerComp_Orders.cs" />

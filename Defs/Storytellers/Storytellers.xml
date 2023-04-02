@@ -134,6 +134,14 @@
 				<incident>StrangerInBlackJoin</incident>
 				<delayTicks>180</delayTicks>
 			</li>
+			<!-- Custom - Siegfried Siege's Orders  -->
+			<li Class="Zomuro.SiegfriedSiege.StorytellerCompProperties_Orders">
+				<orders>
+					<!--<li>Zomuro_Wisdom</li>-->
+					<li>Zomuro_Duty</li>
+					<!--<li>Zomuro_Courage</li>-->
+				</orders>
+			</li>
 		</comps>
 	</StorytellerDef>
 

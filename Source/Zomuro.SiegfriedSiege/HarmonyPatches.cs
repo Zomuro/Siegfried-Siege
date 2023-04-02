@@ -30,6 +30,11 @@ namespace Zomuro.SiegfriedSiege
             harmony.Patch(AccessTools.Method(typeof(Storyteller), "ExposeData"),
                 null, new HarmonyMethod(typeof(HarmonyPatches), nameof(ExposeData_SiegfriedSiege_Post)));
 
+            // Aptitude_Get_Postfix
+            // POSTFIX: if Siegfried's order is Order: duty, adjust skill level based on passion
+            harmony.Patch(AccessTools.Method(typeof(SkillRecord), "get_Aptitude"),
+                null, new HarmonyMethod(typeof(HarmonyPatches), nameof(Aptitude_Get_Postfix)));
+
         }
 
         // POSTFIX: adjust hunger rate if the pawn is in combat, based on settings
@@ -71,6 +76,7 @@ namespace Zomuro.SiegfriedSiege
             yield break;
         }
 
+        // used by transplier to double damage done to buildings, prior to other effects like random damage spread
         public static float SiegfriedSiegeBuildDamageFactor()
         {
             if (StorytellerUtility.SiegfriedSiegeCheck()) return StorytellerUtility.settings.SiegfriedSiegeBuildingMult;
@@ -79,14 +85,25 @@ namespace Zomuro.SiegfriedSiege
 
         }
 
-        public static void ExposeData_SiegfriedSiege_Post(Storyteller __instance) // save Siegfried's comp values
+        // POSTFIX: save Siegfried's comp values; use to keep track of current order + ticks before order change
+        public static void ExposeData_SiegfriedSiege_Post()
         {
-            if (Find.Storyteller.def != StorytellerDefOf.Zomuro_SiegfriedSiege) return;
+            if (!StorytellerUtility.SiegfriedSiegeCheck()) return;
             StorytellerComp_Orders compOrder = StorytellerUtility.OrdersComp;
             if (compOrder != null)
             {
                 compOrder.CompExposeData();
             }
+        }
+
+        // POSTFIX: if Siegfried's order is (Order: duty), adjust skill level based on passion
+        public static void Aptitude_Get_Postfix(SkillRecord __instance, ref int __result)
+        {
+            if (!StorytellerUtility.SiegfriedSiegeCheck() || 
+                StorytellerUtility.OrdersComp.currentOrder != StorytellerOrderDefOf.Zomuro_Duty) return;
+
+            if (__instance.passion == Passion.Minor) __result += 1;
+            else if (__instance.passion == Passion.Major) __result += 2;
         }
     }
 }
