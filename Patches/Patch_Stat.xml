@@ -76,6 +76,28 @@
 		</value>
 	</Operation>
 	
+	<Operation Class="PatchOperationAdd"> <!-- ComfyTemperatureMax -->
+		<xpath>Defs/StatDef[defName="ComfyTemperatureMax"]/parts</xpath>
+		<value>
+			<li Class="Zomuro.SiegfriedSiege.StatPart_Order">
+				<requiredOrderDef>Zomuro_Courage</requiredOrderDef>
+				<key>SiegfriedSiege_StatsReport_Courage</key>
+				<factor>1.2</factor>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd"> <!-- InjuryHealingFactor -->
+		<xpath>Defs/StatDef[defName="InjuryHealingFactor"]/parts</xpath>
+		<value>
+			<li Class="Zomuro.SiegfriedSiege.StatPart_Order">
+				<requiredOrderDef>Zomuro_Courage</requiredOrderDef>
+				<key>SiegfriedSiege_StatsReport_Courage</key>
+				<factor>2</factor>
+			</li>
+		</value>
+	</Operation>
+	
 	
 
 	<!--<Operation Class="PatchOperationAdd"> 

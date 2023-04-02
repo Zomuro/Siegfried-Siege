@@ -7,7 +7,8 @@
 	<SiegfriedSiege_StatsReport_CombatMentalThreshold>Combat mental threshold multiplier (Siegfried Siege)</SiegfriedSiege_StatsReport_CombatMentalThreshold>
 
 	<!-- orders -->
-	<SiegfriedSiege_StatsReport_WisdomDay>Siegfried Siege's Order (Wisdom; Daytime):</SiegfriedSiege_StatsReport_WisdomDay>
-	<SiegfriedSiege_StatsReport_WisdomNight>Siegfried Siege's Order (Wisdom; Nighttime):</SiegfriedSiege_StatsReport_WisdomNight>
+	<SiegfriedSiege_StatsReport_WisdomDay>Siegfried Siege's order (Wisdom; Daytime):</SiegfriedSiege_StatsReport_WisdomDay>
+	<SiegfriedSiege_StatsReport_WisdomNight>Siegfried Siege's order (Wisdom; Nighttime):</SiegfriedSiege_StatsReport_WisdomNight>
+	<SiegfriedSiege_StatsReport_Courage>Siegfried Siege's order (Courage):</SiegfriedSiege_StatsReport_Courage>
 	
 </LanguageData>

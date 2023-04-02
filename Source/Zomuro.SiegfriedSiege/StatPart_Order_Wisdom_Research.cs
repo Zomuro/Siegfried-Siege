@@ -18,7 +18,7 @@ namespace Zomuro.SiegfriedSiege
 			return false;
         }
 		
-		public override void TransformValue(StatRequest req, ref float val)
+		/*public override void TransformValue(StatRequest req, ref float val)
 		{
 			if (req.HasThing)
 			{
@@ -41,6 +41,6 @@ namespace Zomuro.SiegfriedSiege
 				}
 			}
 			return null;
-		}
+		}*/
 	}
 }

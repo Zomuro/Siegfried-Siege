@@ -138,8 +138,8 @@
 			<li Class="Zomuro.SiegfriedSiege.StorytellerCompProperties_Orders">
 				<orders>
 					<!--<li>Zomuro_Wisdom</li>-->
-					<li>Zomuro_Duty</li>
-					<!--<li>Zomuro_Courage</li>-->
+					<!--<li>Zomuro_Duty</li>-->
+					<li>Zomuro_Courage</li>
 				</orders>
 			</li>
 		</comps>

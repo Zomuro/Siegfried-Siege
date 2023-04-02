@@ -13,12 +13,16 @@ namespace Zomuro.SiegfriedSiege
 			if (requiredOrderDef is null || requiredOrderDef == StorytellerUtility.OrdersComp.currentOrder) return true;
 			return false;
         }
-		
+
 		public override void TransformValue(StatRequest req, ref float val)
 		{
 			if (req.HasThing)
 			{
-				val *= 1f;
+				Pawn pawn = req.Thing as Pawn;
+				if (pawn != null && ConfirmOrder(pawn))
+				{
+					val *= factor;
+				}
 			}
 		}
 
@@ -26,7 +30,11 @@ namespace Zomuro.SiegfriedSiege
 		{
 			if (req.HasThing)
 			{
-				return "";
+				Pawn pawn = req.Thing as Pawn;
+				if (pawn != null && ConfirmOrder(pawn))
+				{
+					return key.Translate() + " x" + factor.ToStringPercent();
+				}
 			}
 			return null;
 		}

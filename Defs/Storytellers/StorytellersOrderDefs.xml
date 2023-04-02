@@ -12,7 +12,7 @@
 		<description>“Responsibility walks hand in hand with competence. Do not shirk your duties.”\n\nWhile this order is active, temporarily increase the level of all skills based on their passion.\n  - Interested: +1 level.\n  - Burning: +2 levels.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
 		<defName>Zomuro_Courage</defName>
 		<label>New order: courage</label>
 		<description>“The fire of war brings both fear and life. Those that can tame the flame abound in courage.”\n\nWhile this order is active, pawn heat tolerance is multiplied by 120%. Additionally, the healing rate of pawns is multiplied by 200%.</description>
