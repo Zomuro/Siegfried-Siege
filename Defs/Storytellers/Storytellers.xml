@@ -137,9 +137,13 @@
 			<!-- Custom - Siegfried Siege's Orders  -->
 			<li Class="Zomuro.SiegfriedSiege.StorytellerCompProperties_Orders">
 				<orders>
-					<!--<li>Zomuro_Wisdom</li>-->
-					<!--<li>Zomuro_Duty</li>-->
+					<!--<li>Zomuro_Wisdom</li>
+					<li>Zomuro_Duty</li>
 					<li>Zomuro_Courage</li>
+					<li>Zomuro_Perseverance</li>
+					<li>Zomuro_Preparation</li>
+					<li>Zomuro_Decisiveness</li>-->
+					<li>Zomuro_Discipline</li>
 				</orders>
 			</li>
 		</comps>

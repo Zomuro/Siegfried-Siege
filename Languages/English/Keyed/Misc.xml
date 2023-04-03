@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- orders -->
+	<SiegfriedSiege_Order_DutyMinor>Siegfried Siege's order (Duty):</SiegfriedSiege_Order_DutyMinor>
+	<SiegfriedSiege_Order_DutyMajor>Siegfried Siege's order (Duty):</SiegfriedSiege_Order_DutyMajor>
+	
+	<!-- thoughts -->
+	<SiegfriedSiege_Order_PrepAwful>Awful prep (Siegfried Siege)</SiegfriedSiege_Order_PrepAwful>
+	<SiegfriedSiege_Order_PrepAwfulDesc>I'd literally be better off naked.</SiegfriedSiege_Order_PrepAwfulDesc>
+	
+	<SiegfriedSiege_Order_PrepPoor>Poor prep (Siegfried Siege)</SiegfriedSiege_Order_PrepPoor>
+	<SiegfriedSiege_Order_PrepPoorDesc>It feels like this stuff will fall right apart.</SiegfriedSiege_Order_PrepPoorDesc>
+	
+	<SiegfriedSiege_Order_PrepNormal>Normal prep (Siegfried Siege)</SiegfriedSiege_Order_PrepNormal>
+	<SiegfriedSiege_Order_PrepNormalDesc>I guess it’ll do.</SiegfriedSiege_Order_PrepNormalDesc>
+	
+	<SiegfriedSiege_Order_PrepGood>Good prep (Siegfried Siege)</SiegfriedSiege_Order_PrepGood>
+	<SiegfriedSiege_Order_PrepGoodDesc>You know what? Not too shabby.</SiegfriedSiege_Order_PrepGoodDesc>
+	
+	<SiegfriedSiege_Order_PrepExcellent>Excellent prep (Siegfried Siege)</SiegfriedSiege_Order_PrepExcellent>
+	<SiegfriedSiege_Order_PrepExcellentDesc>Now this- this is some quality work.</SiegfriedSiege_Order_PrepExcellentDesc>
+	
+	<SiegfriedSiege_Order_PrepMasterwork>Masterwork prep (Siegfried Siege)</SiegfriedSiege_Order_PrepMasterwork>
+	<SiegfriedSiege_Order_PrepMasterworkDesc>I’m as ready as I’ll ever be.</SiegfriedSiege_Order_PrepMasterworkDesc>
+	
+	<SiegfriedSiege_Order_PrepLegendary>Legendary prep (Siegfried Siege)</SiegfriedSiege_Order_PrepLegendary>
+	<SiegfriedSiege_Order_PrepLegendaryDesc>Bring it on!</SiegfriedSiege_Order_PrepLegendaryDesc>
+  
+</LanguageData>

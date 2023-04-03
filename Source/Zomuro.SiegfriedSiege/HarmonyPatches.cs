@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Text;
+using System.Linq;
 using RimWorld;
 using Verse;
 using HarmonyLib;
@@ -23,7 +26,7 @@ namespace Zomuro.SiegfriedSiege
             // Apply_SiegfriedSiege_Post
             // TRANSPLIER: multiples base damage amount by setting amount if storyteller is Siegward Siege
             harmony.Patch(AccessTools.Method(typeof(DamageWorker), "Apply"),
-                null, null, new HarmonyMethod(typeof(HarmonyPatches), nameof(Apply_SiegfriedSiege_Post)));
+                null, null, new HarmonyMethod(typeof(HarmonyPatches), nameof(Apply_SiegfriedSiege_Transplier)));
 
             // ExposeData_SiegfriedSiege_Post
             // POSTFIX: saves values for Siegfried's comp
@@ -34,6 +37,16 @@ namespace Zomuro.SiegfriedSiege
             // POSTFIX: if Siegfried's order is Order: duty, adjust skill level based on passion
             harmony.Patch(AccessTools.Method(typeof(SkillRecord), "get_Aptitude"),
                 null, new HarmonyMethod(typeof(HarmonyPatches), nameof(Aptitude_Get_Postfix)));
+
+            // GetSkillDescription_SiegfriedSiege_Transplier
+            // TRANSPLIER: shows in skill UI the effects of Siegfried's order
+            harmony.Patch(AccessTools.Method(typeof(SkillUI), "GetSkillDescription"),
+                null, null, new HarmonyMethod(typeof(HarmonyPatches), nameof(GetSkillDescription_SiegfriedSiege_Transplier)));
+
+            // PreApplyDamage_SiegfriedSiege_Prefix
+            // Prefix: multiplies damage dealt by the instigator based on the % health lost
+            harmony.Patch(AccessTools.Method(typeof(Thing), "PreApplyDamage"),
+                new HarmonyMethod(typeof(HarmonyPatches), nameof(PreApplyDamage_SiegfriedSiege_Prefix)));
 
         }
 
@@ -51,7 +64,7 @@ namespace Zomuro.SiegfriedSiege
 
         // TRANSPLIER: multiples base damage amount by setting amount if storyteller is Siegward Siege
         [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> Apply_SiegfriedSiege_Post(IEnumerable<CodeInstruction> instructions)
+        public static IEnumerable<CodeInstruction> Apply_SiegfriedSiege_Transplier(IEnumerable<CodeInstruction> instructions)
         {
             FieldInfo buildingDamageFactor = AccessTools.Field(typeof(DamageDef), "buildingDamageFactor");
             int spacing = 0;
@@ -80,9 +93,7 @@ namespace Zomuro.SiegfriedSiege
         public static float SiegfriedSiegeBuildDamageFactor()
         {
             if (StorytellerUtility.SiegfriedSiegeCheck()) return StorytellerUtility.settings.SiegfriedSiegeBuildingMult;
-                
             return 1f;
-
         }
 
         // POSTFIX: save Siegfried's comp values; use to keep track of current order + ticks before order change
@@ -104,6 +115,56 @@ namespace Zomuro.SiegfriedSiege
 
             if (__instance.passion == Passion.Minor) __result += 1;
             else if (__instance.passion == Passion.Major) __result += 2;
+        }
+
+        // TRANSPLIER: shows in skill UI the effects of Siegfried's order
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> GetSkillDescription_SiegfriedSiege_Transplier(IEnumerable<CodeInstruction> instructions)
+        {
+            FieldInfo geneTracker = AccessTools.Field(typeof(Pawn), "genes");
+            FieldInfo passion = typeof(SkillRecord).GetField("passion");
+            MethodInfo skillDesc = typeof(HarmonyPatches).GetMethod("SiegfriedSiegeOrderSkillDesc", new Type[] { typeof(StringBuilder), typeof(Passion) });
+
+            List<CodeInstruction> method = new List<CodeInstruction>();
+            method.Add(new CodeInstruction(OpCodes.Ldloc_0, null));
+            method.Add(new CodeInstruction(OpCodes.Ldarg_0, null));
+            method.Add(new CodeInstruction(OpCodes.Ldfld, passion));
+            method.Add(new CodeInstruction(OpCodes.Call, skillDesc));
+
+            var codes = new List<CodeInstruction>(instructions);
+            for (var i = 0; i < codes.Count; i++)
+            {
+                if (codes[i+3].opcode == OpCodes.Ldfld && codes[i + 3].LoadsField(geneTracker))
+                {
+                    codes.InsertRange(i, method);
+                    break;
+                }
+            }
+
+            return codes.AsEnumerable();
+        }
+
+        public static void SiegfriedSiegeOrderSkillDesc(StringBuilder builder, Passion passion)
+        {
+            if (!StorytellerUtility.SiegfriedSiegeCheck() || StorytellerUtility.OrdersComp.currentOrder != StorytellerOrderDefOf.Zomuro_Duty || 
+                passion == Passion.None) return;
+            if (passion == Passion.Minor) builder.AppendLine("  - " + "SiegfriedSiege_Order_DutyMinor".Translate() + " +1");
+            else if (passion == Passion.Major) builder.AppendLine("  - " + "SiegfriedSiege_Order_DutyMajor".Translate() + " +2");
+            return;
+        }
+
+        public static bool PreApplyDamage_SiegfriedSiege_Prefix(ref DamageInfo __0)
+        {
+            if (!StorytellerUtility.SiegfriedSiegeCheck() || 
+                StorytellerUtility.OrdersComp.currentOrder != StorytellerOrderDefOf.Zomuro_Decisiveness) return true;
+
+            Pawn attacker = __0.Instigator as Pawn;
+            if(attacker != null)
+            {
+                float hpLostPerc = 1f + (1f - attacker.health.summaryHealth.SummaryHealthPercent);
+                __0.SetAmount(__0.Amount * hpLostPerc);
+            }
+            return true;
         }
     }
 }

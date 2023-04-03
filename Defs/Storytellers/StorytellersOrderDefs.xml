@@ -18,25 +18,25 @@
 		<description>“The fire of war brings both fear and life. Those that can tame the flame abound in courage.”\n\nWhile this order is active, pawn heat tolerance is multiplied by 120%. Additionally, the healing rate of pawns is multiplied by 200%.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
 		<defName>Zomuro_Perseverance</defName>
 		<label>New order: perseverance</label>
 		<description>“A powerful will grinds even mountains down. This is how Rosstein fell.”\n\nWhile this order is active, enemies take more damage depending on their size.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
-		<defName>Zomuro_Humility</defName>
-		<label>New order: humility</label>
-		<description>“An army’s value is greater than that of the soldiers serving in it.”\n\nWhile this order is active, mood is granted for each piece of equipment that has a quality rating, depending on the quality.\n  - Awful (-2)\n  - Poor (-1)\n  - Normal (0)\n  - Good (+1)\n  - Excellent (+2)\n  - Masterwork (+3)\n  - Legendary (+4)</description>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
+		<defName>Zomuro_Preparation</defName>
+		<label>New order: preparation</label>
+		<description>“War does not wait for a sharpened blade.”\n\nWhile this order is active, mood is based on the pawn’s total “quality score”, calculated using the quality level of all equipment that has a quality rating. Different qualities provide different mood differences.\n  - Awful (-2)\n  - Poor (-1)\n  - Normal (0)\n  - Good (+1)\n  - Excellent (+2)\n  - Masterwork (+3)\n  - Legendary (+4)</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
 		<defName>Zomuro_Decisiveness</defName>
 		<label>New order: decisiveness</label>
-		<description>“Do not hesitate in the midst of adversity. Difficult choices separate the dead from the living.”\n\nWhile this order is active, the less health a pawn has, the more melee damage they do.</description>
+		<description>“Do not hesitate in the midst of adversity. Difficult choices separate the dead from the living.”\n\nWhile this order is active, pawns deal more damage the lower their health is. For every 1% of lost health, the damage multiplier is increased by 1%.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
 		<defName>Zomuro_Discipline</defName>
 		<label>New order: discipline</label>
 		<description>“Panic serves no one but the enemy. That is why you must keep your cool.”\n\nWhile this order is active, pawn cold tolerance is multiplied by 120%. Additionally, their mental break threshold is multiplied by pawn health percentage.</description>

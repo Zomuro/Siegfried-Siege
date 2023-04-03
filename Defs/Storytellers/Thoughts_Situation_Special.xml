@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>Zomuro_Preparation_Thought</defName>
+		<thoughtClass>Zomuro.SiegfriedSiege.Thought_Order_Preparation</thoughtClass>
+		<workerClass>Zomuro.SiegfriedSiege.ThoughtWorker_Order_Preparation</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages> <!-- label and desc are keyed -->
+			<li>
+				<label>SiegfriedSiege_Order_PrepAwful</label>
+				<description>SiegfriedSiege_Order_PrepAwfulDesc</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+			<li>
+				<label>SiegfriedSiege_Order_PrepPoor</label>
+				<description>SiegfriedSiege_Order_PrepPoorDesc</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+			<li>
+				<label>SiegfriedSiege_Order_PrepNormal</label>
+				<description>SiegfriedSiege_Order_PrepNormalDesc</description>
+				<baseMoodEffect>0</baseMoodEffect>
+			</li>
+			<li>
+				<label>SiegfriedSiege_Order_PrepGood</label>
+				<description>SiegfriedSiege_Order_PrepGoodDesc</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+			<li>
+				<label>SiegfriedSiege_Order_PrepExcellent</label>
+				<description>SiegfriedSiege_Order_PrepExcellentDesc</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+			<li>
+				<label>SiegfriedSiege_Order_PrepMasterwork</label>
+				<description>SiegfriedSiege_Order_PrepMasterworkDesc</description>
+				<baseMoodEffect>12</baseMoodEffect>
+			</li>
+			<li>
+				<label>SiegfriedSiege_Order_PrepLegendary</label>
+				<description>SiegfriedSiege_Order_PrepLegendaryDesc</description>
+				<baseMoodEffect>16</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+  
+</Defs>

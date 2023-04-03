@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+	<!-- Siegfried Siege general patches -->
 	<Operation Class="PatchOperationConditional"> <!-- Construction speed -->
 		<xpath>Defs/StatDef[defName="ConstructionSpeed"]/parts</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -28,6 +29,10 @@
 			<value>
 				<parts>
 					<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Discipline_Mental">
+						<requiredOrderDef>Zomuro_Discipline</requiredOrderDef>
+						<key>SiegfriedSiege_StatsReport_Discipline</key>
+					</li>
 				</parts>
 			</value>
 		</nomatch>
@@ -35,10 +40,15 @@
 			<xpath>Defs/StatDef[defName="MentalBreakThreshold"]/parts</xpath>
 			<value>
 				<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Discipline_Mental">
+					<requiredOrderDef>Zomuro_Discipline</requiredOrderDef>
+					<key>SiegfriedSiege_StatsReport_Discipline</key>
+				</li>
 			</value>
 		</match>
 	</Operation>
 	
+	<!-- Order: Wisdom -->
 	<Operation Class="PatchOperationConditional"> <!-- ResearchSpeed -->
 		<xpath>Defs/StatDef[defName="ResearchSpeed"]/parts</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -76,6 +86,7 @@
 		</value>
 	</Operation>
 	
+	<!-- Order: Courage -->
 	<Operation Class="PatchOperationAdd"> <!-- ComfyTemperatureMax -->
 		<xpath>Defs/StatDef[defName="ComfyTemperatureMax"]/parts</xpath>
 		<value>
@@ -98,6 +109,44 @@
 		</value>
 	</Operation>
 	
+	<!-- Order: Perseverance -->
+	<Operation Class="PatchOperationConditional"> <!-- IncomingDamageFactor -->
+		<xpath>Defs/StatDef[defName="IncomingDamageFactor"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="IncomingDamageFactor"]</xpath>
+			<value>
+				<parts>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Perseverance">
+						<requiredOrderDef>Zomuro_Perseverance</requiredOrderDef>
+						<key>SiegfriedSiege_StatsReport_Perseverance</key>
+						<factor>0.2</factor> <!-- 20% added to multplier for every additional unit of base body size -->
+					</li>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="IncomingDamageFactor"]/parts</xpath>
+			<value>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Perseverance">
+					<requiredOrderDef>Zomuro_Perseverance</requiredOrderDef>
+					<key>SiegfriedSiege_StatsReport_Perseverance</key>
+					<factor>0.2</factor>
+				</li>
+			</value>
+		</match>
+	</Operation>
+	
+	<!-- Order: Discipline -->
+	<Operation Class="PatchOperationAdd"> <!-- ComfyTemperatureMin -->
+		<xpath>Defs/StatDef[defName="ComfyTemperatureMin"]/parts</xpath>
+		<value>
+			<li Class="Zomuro.SiegfriedSiege.StatPart_Order">
+				<requiredOrderDef>Zomuro_Discipline</requiredOrderDef>
+				<key>SiegfriedSiege_StatsReport_Discipline</key>
+				<factor>1.2</factor> 
+			</li>
+		</value>
+	</Operation>
 	
 
 	<!--<Operation Class="PatchOperationAdd"> 
