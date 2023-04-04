@@ -23,7 +23,7 @@ namespace Zomuro.SiegfriedSiege
             harmony.Patch(AccessTools.Method(typeof(Need_Food), "FoodFallPerTickAssumingCategory"),
                 null, new HarmonyMethod(typeof(HarmonyPatches), nameof(FoodFallPerTickAssumingCategory_SiegwardSiege_Post)));
 
-            // Apply_SiegfriedSiege_Post
+            // Apply_SiegfriedSiege_Transplier
             // TRANSPLIER: multiples base damage amount by setting amount if storyteller is Siegward Siege
             harmony.Patch(AccessTools.Method(typeof(DamageWorker), "Apply"),
                 null, null, new HarmonyMethod(typeof(HarmonyPatches), nameof(Apply_SiegfriedSiege_Transplier)));
@@ -44,7 +44,7 @@ namespace Zomuro.SiegfriedSiege
                 null, null, new HarmonyMethod(typeof(HarmonyPatches), nameof(GetSkillDescription_SiegfriedSiege_Transplier)));
 
             // PreApplyDamage_SiegfriedSiege_Prefix
-            // Prefix: multiplies damage dealt by the instigator based on the % health lost
+            // PREFIX: multiplies damage dealt by the instigator based on the % health lost
             harmony.Patch(AccessTools.Method(typeof(Thing), "PreApplyDamage"),
                 new HarmonyMethod(typeof(HarmonyPatches), nameof(PreApplyDamage_SiegfriedSiege_Prefix)));
 
@@ -143,7 +143,8 @@ namespace Zomuro.SiegfriedSiege
 
             return codes.AsEnumerable();
         }
-
+        
+        // method used by skill desc transplier
         public static void SiegfriedSiegeOrderSkillDesc(StringBuilder builder, Passion passion)
         {
             if (!StorytellerUtility.SiegfriedSiegeCheck() || StorytellerUtility.OrdersComp.currentOrder != StorytellerOrderDefOf.Zomuro_Duty || 
@@ -153,6 +154,7 @@ namespace Zomuro.SiegfriedSiege
             return;
         }
 
+        // PREFIX: multiplies damage dealt by the instigator based on the % health lost
         public static bool PreApplyDamage_SiegfriedSiege_Prefix(ref DamageInfo __0)
         {
             if (!StorytellerUtility.SiegfriedSiegeCheck() || 

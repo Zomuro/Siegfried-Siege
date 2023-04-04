@@ -42,16 +42,16 @@
 		<description>“Panic serves no one but the enemy. That is why you must keep your cool.”\n\nWhile this order is active, pawn cold tolerance is multiplied by 120%. Additionally, their mental break threshold is multiplied by pawn health percentage.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
 		<defName>Zomuro_Honor</defName>
 		<label>New order: honor</label>
-		<description>“Honor makes men better than beasts. Discarding it cheapens the blood spilled.”\n\nWhile this order is active, pawns heal from the damage they deal based on their social relationship scores.</description>
+		<description>“Honor makes men better than beasts. Discarding it cheapens the blood spilled.”\n\nWhile this order is active, a pawn’s injury healing factor is multiplied based on other pawns’ positive opinions of them.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
-	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
+	<Zomuro.SiegfriedSiege.StorytellerOrderDef> <!-- done -->
 		<defName>Zomuro_Loyalty</defName>
 		<label>New order: loyalty</label>
-		<description>“Promises kept are the mark of great men. Your oath to me will be your shield.”\n\nWhile this order is active, the lower a pawn’s mental break threshold is, the greater damage reduction they gain.</description>
+		<description>“Promises kept are the mark of great men. Your oath to me will be your shield.”\n\nWhile this order is active, the lower a pawn’s mental break threshold is, the more damage reduction they gain (up to a 50% multiplier).</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 	
 	<Zomuro.SiegfriedSiege.StorytellerOrderDef>

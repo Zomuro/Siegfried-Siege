@@ -106,6 +106,10 @@
 				<key>SiegfriedSiege_StatsReport_Courage</key>
 				<factor>2</factor>
 			</li>
+			<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Honor">
+				<requiredOrderDef>Zomuro_Honor</requiredOrderDef>
+				<key>SiegfriedSiege_StatsReport_Honor</key>
+			</li>
 		</value>
 	</Operation>
 	
@@ -121,6 +125,10 @@
 						<key>SiegfriedSiege_StatsReport_Perseverance</key>
 						<factor>0.2</factor> <!-- 20% added to multplier for every additional unit of base body size -->
 					</li>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Loyalty">
+						<requiredOrderDef>Zomuro_Loyalty</requiredOrderDef>
+						<key>SiegfriedSiege_StatsReport_Loyalty</key>
+					</li>
 				</parts>
 			</value>
 		</nomatch>
@@ -131,6 +139,10 @@
 					<requiredOrderDef>Zomuro_Perseverance</requiredOrderDef>
 					<key>SiegfriedSiege_StatsReport_Perseverance</key>
 					<factor>0.2</factor>
+				</li>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Loyalty">
+					<requiredOrderDef>Zomuro_Loyalty</requiredOrderDef>
+					<key>SiegfriedSiege_StatsReport_Loyalty</key>
 				</li>
 			</value>
 		</match>
