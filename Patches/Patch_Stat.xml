@@ -160,25 +160,42 @@
 		</value>
 	</Operation>
 	
-
-	<!--<Operation Class="PatchOperationAdd"> 
-		<xpath>/Defs/StatDef[defName="ConstructionSpeed"]</xpath>
+	<!-- Order: Patience -->
+	<Operation Class="PatchOperationAdd"> <!-- ImmunityGainSpeed -->
+		<xpath>Defs/StatDef[defName="ImmunityGainSpeed"]/parts</xpath>
 		<value>
-			<parts>
-				<li Class="Zomuro.SiegfriedSiege.StatPart_ConstructSpeedSetting"/>
-				<li Class="Zomuro.SiegfriedSiege.StatPart_CombatConstructSpeedSetting"/>
-			</parts>
+			<li Class="Zomuro.SiegfriedSiege.StatPart_Order">
+				<requiredOrderDef>Zomuro_Patience</requiredOrderDef>
+				<key>SiegfriedSiege_StatsReport_Patience</key>
+				<factor>1.3</factor> 
+			</li>
 		</value>
-    </Operation>	
+	</Operation>
 	
-	<Operation Class="PatchOperationAdd"> 
-		<xpath>/Defs/StatDef[defName="MentalBreakThreshold"]</xpath>
-		<value>
-			<parts>
-				<li Class="Zomuro.SiegfriedSiege.StatPart_MentalThresholdSetting"/>
-			</parts>
-		</value>
-    </Operation>	-->
-	
+	<Operation Class="PatchOperationConditional"> <!-- MedicalTendSpeed -->
+		<xpath>Defs/StatDef[defName="MedicalTendSpeed"]/parts</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="MedicalTendSpeed"]</xpath>
+			<value>
+				<parts>
+					<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Patience">
+						<requiredOrderDef>Zomuro_Patience</requiredOrderDef>
+						<key>SiegfriedSiege_StatsReport_Patience</key>
+						<factor>1.3</factor>
+					</li>
+				</parts>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="MedicalTendSpeed"]/parts</xpath>
+			<value>
+				<li Class="Zomuro.SiegfriedSiege.StatPart_Order_Patience">
+					<requiredOrderDef>Zomuro_Patience</requiredOrderDef>
+					<key>SiegfriedSiege_StatsReport_Patience</key>
+					<factor>1.3</factor>
+				</li>
+			</value>
+		</match>
+	</Operation>
 	
 </Patch>

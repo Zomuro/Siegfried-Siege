@@ -1,15 +1,15 @@
 ﻿using RimWorld;
 using Verse;
-using UnityEngine;
 
 namespace Zomuro.SiegfriedSiege
 {
-	public class StatPart_Order_Loyalty : StatPart_Order
+	public class StatPart_Order_Patience : StatPart_Order
 	{
 
-		public float MentalThreshMult(Pawn pawn)
+		public float FinalTendMult(Pawn pawn)
 		{
-			return Mathf.Lerp(0.5f, 1f, pawn.needs.TryGetNeed<Need_Mood>().CurLevel / StatDefOf.MentalBreakThreshold.maxValue);
+			if (StorytellerUtility.SiegfriedSiegeCombatCheck(pawn)) return factor + 0.3f;
+			return factor;
 		}
 
 		public override void TransformValue(StatRequest req, ref float val)
@@ -19,7 +19,7 @@ namespace Zomuro.SiegfriedSiege
 				Pawn pawn = req.Thing as Pawn;
 				if (pawn != null && ConfirmOrder(pawn))
 				{
-					val *= MentalThreshMult(pawn);
+					val *= FinalTendMult(pawn);
 				}
 			}
 		}
@@ -31,7 +31,7 @@ namespace Zomuro.SiegfriedSiege
 				Pawn pawn = req.Thing as Pawn;
 				if (pawn != null && ConfirmOrder(pawn))
 				{
-					return key.Translate() + " x" + MentalThreshMult(pawn).ToStringPercent();
+					return key.Translate() + " x" + FinalTendMult(pawn).ToStringPercent();
 				}
 			}
 			return null;

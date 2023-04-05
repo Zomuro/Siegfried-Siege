@@ -3,6 +3,18 @@
   
 	<SiegfriedSiege_Settings>Siegfried Siege</SiegfriedSiege_Settings>
 	<SiegfriedSiege_Label>Siegfried Siege</SiegfriedSiege_Label>
+	
+	<SiegfriedSiege_SettingsGeneral>General</SiegfriedSiege_SettingsGeneral>
+	<SiegfriedSiege_SettingsOrders>Orders</SiegfriedSiege_SettingsOrders>
+	
+	<SiegfriedSiege_SettingsOrdersToggle>Toggle orders</SiegfriedSiege_SettingsOrdersToggle>
+	<SiegfriedSiege_SettingsGeneral>Back to general</SiegfriedSiege_SettingsGeneral>
+	
+	<SiegfriedSiege_RepeatOrders>Enable repeat orders: {0}</SiegfriedSiege_RepeatOrders>
+	<SiegfriedSiege_RepeatOrdersTooltip>Toggle whether or not Siegfried can give the same order as the current order.</SiegfriedSiege_RepeatOrdersTooltip>
+	<SiegfriedSiege_MTBDaysOrders>MTB days for orders: {0} days</SiegfriedSiege_MTBDaysOrders>
+	<SiegfriedSiege_MTBDaysOrdersTooltip>Sets the average number of days between Siegfried's orders.</SiegfriedSiege_MTBDaysOrdersTooltip>
+	
 	<SiegfriedSiege_BuildingDmgSetting>Building damage factor: {0}x</SiegfriedSiege_BuildingDmgSetting>
 	<SiegfriedSiege_BuildingDmgSettingTooltip>Sets how much Siegfried Siege multiples damage to buildings by, independent of any existing factors.</SiegfriedSiege_BuildingDmgSettingTooltip>
 	<SiegfriedSiege_ConstructSetting>Construction speed factor: {0}x</SiegfriedSiege_ConstructSetting>

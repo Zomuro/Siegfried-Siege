@@ -6,7 +6,7 @@ namespace Zomuro.SiegfriedSiege
     {
         public static bool SiegfriedSiegeCheck() // not really advanced code, but just useful to have in one place
         {
-			if (Find.Storyteller.def != Zomuro.SiegfriedSiege.StorytellerDefOf.Zomuro_SiegfriedSiege) return false;
+			if (Find.Storyteller.def != StorytellerDefOf.Zomuro_SiegfriedSiege) return false;
 			return true;
         }
         

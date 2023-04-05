@@ -8,6 +8,10 @@ namespace Zomuro.SiegfriedSiege
 {
     public class SiegfriedSiegeSettings : ModSettings
     {
+        public bool SiegfriedSiegeOrderRepeat = false; // Default : false; toggle if orders can be repeated. If there's only one order or none, repeat.
+
+        public float SiegfriedSiegeOrderMTBDays = 7f; // Default : 7f; sets the estimated number of days before Siegfried gives a new order.
+
         public float SiegfriedSiegeBuildingMult = 2f; // Default: 2x building damage
 
         public float SiegfriedSiegeConstructionMult = 1.3f; // Default: 1.3x construction speed
@@ -28,6 +32,9 @@ namespace Zomuro.SiegfriedSiege
 
         public override void ExposeData()
         {
+            Scribe_Values.Look(ref SiegfriedSiegeOrderRepeat, "SiegfriedSiegeOrderRepeat", false);
+            Scribe_Values.Look(ref SiegfriedSiegeOrderMTBDays, "SiegfriedSiegeOrderMTBDays", 7f);
+
             Scribe_Values.Look(ref SiegfriedSiegeBuildingMult, "SiegfriedSiegeBuildingMult", 2f);
             Scribe_Values.Look(ref SiegfriedSiegeConstructionMult, "SiegfriedSiegeConstructionMult", 1.3f);
             Scribe_Values.Look(ref SiegfriedSiegeCombatHungerMult, "SiegfriedSiegeCombatHungerMult", 0.8f);
@@ -50,7 +57,7 @@ namespace Zomuro.SiegfriedSiege
 
         public SiegfriedSiegeMod(ModContentPack content) : base(content)
         {
-            this.settings = GetSettings<SiegfriedSiegeSettings>();
+            settings = GetSettings<SiegfriedSiegeSettings>();
         }
 
         public override string SettingsCategory()
@@ -90,7 +97,18 @@ namespace Zomuro.SiegfriedSiege
 
         public void SiegfriedSiegeSettings(ref Listing_Standard listing)
         {
+            Text.Font = GameFont.Medium;
+            listing.Label("SiegfriedSiege_SettingsGeneral".Translate());
+            listing.GapLine();
+
             Text.Font = GameFont.Small;
+
+            listing.CheckboxLabeled("SiegfriedSiege_RepeatOrders".Translate(settings.SiegfriedSiegeOrderRepeat.ToString()),
+                ref settings.SiegfriedSiegeOrderRepeat, "SiegfriedSiege_RepeatOrdersTooltip".Translate());
+            listing.Label("SiegfriedSiege_MTBDaysOrders".Translate(settings.SiegfriedSiegeOrderMTBDays.ToString("F1")), -1,
+                "SiegfriedSiege_MTBDaysOrdersTooltip".Translate());
+            settings.SiegfriedSiegeOrderMTBDays = listing.Slider(ForceRoundTenths(settings.SiegfriedSiegeOrderMTBDays), 0.5f, 14f);
+
             listing.Label("SiegfriedSiege_BuildingDmgSetting".Translate(settings.SiegfriedSiegeBuildingMult.ToString("F1")), -1,
                 "SiegfriedSiege_BuildingDmgSettingTooltip".Translate());
             settings.SiegfriedSiegeBuildingMult = listing.Slider(ForceRoundTenths(settings.SiegfriedSiegeBuildingMult), 0.5f, 3f);
@@ -139,6 +157,9 @@ namespace Zomuro.SiegfriedSiege
 
         public void SiegfriedSiegeDefault() // button to reset everything
         {
+            settings.SiegfriedSiegeOrderRepeat = false;
+            settings.SiegfriedSiegeOrderMTBDays = 7f;
+
             settings.SiegfriedSiegeBuildingMult = 2f;
             settings.SiegfriedSiegeConstructionMult = 1.3f;
             settings.SiegfriedSiegeCombatHungerMult = 0.8f;
@@ -150,5 +171,9 @@ namespace Zomuro.SiegfriedSiege
             settings.SiegfriedSiegeCombatMentalEnable = false;
             settings.SiegfriedSiegeCombatMentalMult = 0.8f;
         }
+
+        public bool gotOrders = false;
+
+        public bool ordersView = false;
     }
 }

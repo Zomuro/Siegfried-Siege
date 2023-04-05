@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using RimWorld.Planet;
 using RimWorld;
 using Verse;
 
@@ -23,9 +20,11 @@ namespace Zomuro.SiegfriedSiege
 
         public void CreateNewOrder(IncidentParms parms)
         {
-            StorytellerUtility.OrdersComp.NewOrder(); // changes Siegfried's order
-            base.SendStandardLetter(StorytellerUtility.OrdersComp.currentOrder.LabelCap, StorytellerUtility.OrdersComp.currentOrder.description, LetterDefOf.NeutralEvent,
-                parms, null, Array.Empty<NamedArgument>()); // sends letter informing player of order change
+            if (StorytellerUtility.OrdersComp.NewOrder()) // if Siegfried's order is successfully changed
+            {
+                base.SendStandardLetter(StorytellerUtility.OrdersComp.currentOrder.LabelCap, StorytellerUtility.OrdersComp.currentOrder.description, LetterDefOf.NeutralEvent,
+                    parms, null, Array.Empty<NamedArgument>()); // sends letter informing player of order change
+            }
         }
 
     }

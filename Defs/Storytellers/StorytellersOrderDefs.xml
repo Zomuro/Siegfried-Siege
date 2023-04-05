@@ -57,7 +57,7 @@
 	<Zomuro.SiegfriedSiege.StorytellerOrderDef>
 		<defName>Zomuro_Patience</defName>
 		<label>New order: patience</label>
-		<description>“The greatest men march forward carefully, as alchemists do. In doing so, they overcome their flaws.”\n\nWhile this order is active, drug highs are extended and skill losses are reduced.</description>
+		<description>“Calm precision, made possible by abundant patience, preserves lives.”\n\nWhile this order is active, pawn medical tend and immunity gain speed are multiplied by 130%. If the pawn is in combat, the medical tend speed multiplier is boosted by 30%.</description>
 	</Zomuro.SiegfriedSiege.StorytellerOrderDef>
 
 </Defs>

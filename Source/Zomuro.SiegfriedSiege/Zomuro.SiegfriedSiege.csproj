@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StatPart_Order_Discipline_Mental.cs" />
+    <Compile Include="StatPart_Order_Patience.cs" />
     <Compile Include="StatPart_Order_Loyalty.cs" />
     <Compile Include="StatPart_Order_Honor.cs" />
     <Compile Include="ThoughtDefOf.cs" />

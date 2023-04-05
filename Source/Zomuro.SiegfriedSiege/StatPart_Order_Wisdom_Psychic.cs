@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 using UnityEngine;
 
 namespace Zomuro.SiegfriedSiege
@@ -15,31 +14,5 @@ namespace Zomuro.SiegfriedSiege
 			}
 			return false;
 		}
-
-		/*public override void TransformValue(StatRequest req, ref float val)
-		{
-			if (req.HasThing)
-			{
-				Pawn pawn = req.Thing as Pawn;
-				if (pawn != null && ConfirmOrder(pawn))
-				{
-					val *= factor;
-				}
-			}
-		}
-
-		public override string ExplanationPart(StatRequest req)
-		{
-			if (req.HasThing)
-			{
-				Pawn pawn = req.Thing as Pawn;
-				if (pawn != null && ConfirmOrder(pawn))
-				{
-					return key.Translate() + " x" + factor.ToStringPercent();
-				}
-			}
-			return null;
-		}*/
-
 	}
 }
