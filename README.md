@@ -5,7 +5,8 @@
 </p>
 
 ### Summary
-Many fortresses have fallen to **Siegfried**, whose experiences have taught him how to efficiently shatter and build fortifications. Under his command, pawns will destroy buildings twice as fast while constructing them 30% faster by default. And in the thick of combat, their need for food is only 80% of normal.
+Many fortresses have fallen to **Siegfried**, whose experiences have taught him how to efficiently shatter and build fortifications. As an officer, your role is to manage your troops and follow his orders, which will give your soldiers various boons. Under his authority, pawns will destroy buildings twice as fast while constructing them 30% faster by default. And in the thick of combat, their need for food is only 80% of normal.
+
 
 Otherwise, his tales will reflect the unpredictability of war.
 
