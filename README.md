@@ -48,6 +48,7 @@ Secondly, mod settings (or anything within the mod) will not allow you to stop *
 
 Warmest thanks go to:
 * **DetVisor**, for the concept of the big man himself and the enchanted steel he wears. This mod was made for him.
-* **Visandar_the_Unliving**, for his incredible art of **Siegfried**.
+* **Visandar_the_Unliving**, for his incredible art of **Siegfried** and suggestions on storyteller mechanics.
+* **TheCatLover366**, for his aid in designing storyteller mechanics.
 
 And many others within the RimWorld community for your support!
